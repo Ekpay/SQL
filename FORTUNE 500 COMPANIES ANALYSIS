@@ -56,6 +56,7 @@ VALUES
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
 
+-- Here I used SQL to access the information in all categories of fortune_companies.
 SELECT *
 FROM fortune_companies;
 
@@ -66,7 +67,7 @@ FROM fortune_companies
 WHERE industry='Technology'
 ORDER BY revenue DESC; 
 
--- I used SQL to aggrgate data on which companies only have an average employee tenure of over 3 years.
+-- I used SQL to compile data on which companies have an average employee tenure of over 3 years.
 
 SELECT company_id, company_name, industry, avg_employee_tenure
 FROM fortune_companies
@@ -79,7 +80,7 @@ SELECT MAX(paid_time_off_days) AS most_timeoff, MIN(paid_time_off_days) AS least
 FROM fortune_companies;
 
 
---1. Grouping the data in a new way using a CASE statement. I used SQL to categorize employees based off how long they have stayed at the company from shortest to longest.
+--1. Grouping the data in a new way using a CASE statement. I used SQL to categorize employees based off how many years they have stayed at the company from shortest to longest.
 
 SELECT company_id, company_name, avg_employee_tenure, 
 CASE WHEN avg_employee_tenure>=6 THEN "Vet"
@@ -90,7 +91,7 @@ END AS "Employee Category"
 FROM fortune_companies
 ORDER BY avg_employee_tenure asc;
 
---2. Using a HAVING clause to determine something interesting about the data PER CATEGORY. I used sql to determine the sum of revenue in each company industry with employees over 1000. 
+--2. Using a HAVING clause to determine something interesting about the data PER CATEGORY. I used SQL to determine the sum of revenue in each company industry with employees over 1000. 
 
 SELECT industry, SUM(revenue) as sum_revenue
 FROM fortune_companies
@@ -106,7 +107,7 @@ AND maternity_leave_weeks>=6
 ORDER BY maternity_leave_weeks asc;
 
 
---4. Using an aggregate function like AVG, SUM, COUNT, MAX, and/or MIN to return summary statistics about the data. I used sql to find the average number of employees in each industry.
+--4. Using an aggregate function like AVG, SUM, COUNT, MAX, and/or MIN to return summary statistics about the data. I used SQL to find the average number of employees in each industry.
 
 SELECT industry, AVG(employees) AS avg_employees
 FROM fortune_companies
