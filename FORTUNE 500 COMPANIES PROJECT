@@ -1,3 +1,6 @@
+# Hello! This analysis uses the following dataset:
+
+
 CREATE TABLE fortune_companies (
     company_id INTEGER PRIMARY KEY,
     company_name TEXT,
@@ -55,6 +58,9 @@ VALUES
     ('Company II', 'Telecommunications', 110.5, 2000, 1, 21, 12, 4.9),
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
+
+# The SQL provided below will be written in StandardSQL format. 
+
 
 -- Here I used SQL to access the information in all categories of fortune_companies.
 SELECT *
