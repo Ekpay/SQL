@@ -2,7 +2,7 @@
 
 # The objective of this project is to get certain information about which doctors are prescribing the comapany's meds. 
 
-# This project was written the StandardSQL dialect and utilized data from the following two datasets: 
+# This project was written the StandardSQL dialect and utilized data from the following two RELATED Databases (Inner Join Focus).
 
 -- Create the 'prescriptions' table
 CREATE TABLE prescriptions (
