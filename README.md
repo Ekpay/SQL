@@ -2,8 +2,8 @@
 > ALERT! READ THIS FIRST
 
 
-# ANTHONY'S PERSONAL SQL PORTFOLIO
+# Anthony Ekpe SQL Portfolio
 
-## HI WELCOME TO MY SQL PORTFOLIO! THIS CODE REPOSITORY PROVIDES EXAMPLES OF SQL I HAVE WRITTEN IN PERSONAL PROJECTS. FEEL FREE TO TAKE A LOOK AND REACH OUT IF YOU HAVE ANY QUESTIONS!
+## Hey there, welcome to my SQL Portfolio! This code repository provides examples of SQL I have written in personal projects. Take the time to take a look right now and reach out via email if you have any questions: Anthony.ekpe1@gmail.com
 
 
