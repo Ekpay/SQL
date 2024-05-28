@@ -52,3 +52,20 @@ SELECT distinct artist_name, popularity
 FROM BIT_DB.Spotifydata
 ORDER BY popularity desc
 LIMIT 5;
+
+
+-- 4. 
+
+-- I am using SQL to calculate the average popularity for the artists in the Spotify data table. 
+-- For every artist with an average popularity of 90 or above, I show their name, average popularity, and label them as a "Top Star"
+-- I will provide the answer by demonstrating the use of CTE within my SQL query.
+
+WITH popularity_average_CTE AS (SELECT s.artist_name,
+AVG(s.popularity) AS average_popularity
+FROM SpotifyData s
+GROUP BY s.artist_name)
+
+
+SELECT artist_name, average_popularity, 'Top Star' AS tag
+FROM popularity_average_CTE
+WHERE average_popularity>=90;
