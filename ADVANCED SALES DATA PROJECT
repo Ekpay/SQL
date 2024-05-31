@@ -2,6 +2,8 @@
 #I emphasized advanced functions such as JOIN, LIKE, DISTINCT, SUM(), and MAX() to analyze sales data and identify top-performing agents.
 #From filtering customers by country to dissecting invoice details, each query offers a glimpse into effective database querying and analysis skills.
 
+#CHINOOK DATABASE (FROM)
+
 --1. What 3 genres of music has the most albums?
 
 
