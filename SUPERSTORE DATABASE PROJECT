@@ -1,3 +1,5 @@
+--Throughout this project the explanatations of why each statement was selected will be explained thourougly. 
+
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
     item_name TEXT,
@@ -27,20 +29,26 @@ VALUES
 
 
 
--- 1. Writing a SQL Query that ORDERS ITEMS by PRICE.
+-- 1. In this problem I am writing a SQL Query that ORDERS ITEMS by PRICE.
 
 SELECT item_id, item_name, price
 FROM superstore
 WHERE item_id
 ORDER BY price
 ;
+-- I am looking for items and price so I selected the columns that revolve around them.
+-- The goal is to order items by price so I used the WHERE statement to indicate that I am filtering for item_id.
+-- I finished off the query by using the ORDER BY statement to sort the result set. The default result will be in ascending order. 
 
--- 2. Writing a SQL Query that will show a STATISTIC about the ITEM PRICES, like a SUM, AVERAGE, MINIMUM, MAXIMUM, OR COUNT.
+
+-- 2. For this problem, I am Writing a SQL Query that will show a STATISTIC about the ITEM PRICES, like a SUM, AVERAGE, MINIMUM, MAXIMUM, OR COUNT.
 
 SELECT SUM(price)
 FROM superstore
 WHERE item_id
 ;
+-- 
+
 
 -- 3. Writing a SQL Query that shows a STATISTIC about the PRICE for ITEMS in the CATEGORY of KITCHEN SUPPLIES.
 
