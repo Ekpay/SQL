@@ -1,4 +1,4 @@
---Throughout this project the explanatations of why each statement was selected will be explained thourougly. 
+#This project uses the following superstore data:
 
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
@@ -27,37 +27,59 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
+#1. Write a SQL Query that ORDERS ITEMS by PRICE.
 
-
--- 1. In this problem I am writing a SQL Query that ORDERS ITEMS by PRICE.
-
-SELECT item_id, item_name, price
-FROM superstore
-WHERE item_id
-ORDER BY price
-;
--- I am looking for items and price so I selected the columns that revolve around them.
--- The goal is to order items by price so I used the WHERE statement to indicate that I am filtering for item_id.
--- I finished off the query by using the ORDER BY statement to sort the result set. The default result will be in ascending order. 
-
-
--- 2. For this problem, I am Writing a SQL Query that will show a STATISTIC about the ITEM PRICES, like a SUM, AVERAGE, MINIMUM, MAXIMUM, OR COUNT.
-
-SELECT SUM(price)
-FROM superstore
-WHERE item_id
-;
--- 
-
-
--- 3. Writing a SQL Query that shows a STATISTIC about the PRICE for ITEMS in the CATEGORY of KITCHEN SUPPLIES.
-
-SELECT COUNT(price)
-FROM superstore
-WHERE category = 'Kitchen Supplies'
+select item_id, item_name, price -- Items and price must be selected.
+from superstore 
+where item_id -- WHERE statement indicates that I am filtering for item_id.
+order by price -- ORDER BY statement sorts the result set for price. 
 ;
 
--- 4. Writing SQL that I made up. Answering a question on my own based on the data. Question, "What is the largest value of the price column across all items?" 
+#2. Write a SQL Query that shows a STATISTIC about the ITEM PRICES (SUM, MAXIMUM, MINIMUM, AVERAGE, AND COUNT).
+
+-- What is the sum of all items in the store?
+
+select sum(price) --Sum aggregate function will return the total for price.
+from superstore
+;
+
+-- What is the name of the most expensive item in the store?
+
+SELECT item_name, price -- Outer query where price matches the highest value.
+FROM superstore
+WHERE price = (SELECT MAX(price) FROM superstore) -- Subquery retrieves highest price from the table.
+;
+
+-- What is the name of the least expensive item in the store?
+
+select item_name, price 
+from superstore
+where price = (select MIN(price) from superstore) -- Subquery retrieves lowest price from the table.
+;
+
+-- What is the average stock quantity of all items in the superstore?
+
+select avg(stock_quantity)
+from superstore
+;
+
+-- How many individual departments does the superstore have to offer?
+
+SELECT COUNT(DISTINCT category)  -- Count the number of UNIQUE departments in the superstore with distinct.
+FROM superstore
+;
+
+#3. Write a SQL Query that shows a STATISTIC about the PRICE for ITEMS in the CATEGORY of KITCHEN SUPPLIES.
+
+-- What is the most expensive kitchen item?
+
+select item_name, price -- Need to display most expensive item name.
+from superstore
+where category = 'Kitchen Supplies' 
+	and price = (select max(price) from superstore where category= 'Kitchen Supplies') -- subquery used to find the maximum price of items in the "Kitchen Supplies" category.
+;
+
+#4. What is the largest value of the price column across all items?
 
 SELECT MAX(price)
 FROM superstore
