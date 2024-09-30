@@ -32,7 +32,7 @@ VALUES
 select item_id, item_name, price -- Items and price must be selected.
 from superstore 
 where item_id -- WHERE statement indicates that I am filtering for item_id.
-order by price -- ORDER BY statement sorts the result set for price. 
+	order by price -- ORDER BY statement sorts the result set for price. 
 ;
 
 #2. Write a SQL Query that shows a STATISTIC about the ITEM PRICES (SUM, MAXIMUM, MINIMUM, AVERAGE, AND COUNT).
